@@ -334,6 +334,7 @@ $("#upload").addEventListener("change", async (event) => {
   const file = event.target.files[0];
   if (!file) return;
   invalidate();
+  const token = generation;
   if (
     file.size > 4_000_000 ||
     !["image/png", "image/jpeg", "image/webp"].includes(file.type)
@@ -344,6 +345,7 @@ $("#upload").addEventListener("change", async (event) => {
   const url = URL.createObjectURL(file);
   try {
     const image = await loadImage(url);
+    if (token !== generation) return;
     if (image.width * image.height > 16_000_000)
       throw new Error("Use an image up to 16 megapixels.");
     original = image;
@@ -363,7 +365,9 @@ $("#download").addEventListener("click", () => {
   const link = document.createElement("a");
   link.href = url;
   link.download = "inspectlab-inspection.json";
+  document.body.append(link);
   link.click();
+  link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 
