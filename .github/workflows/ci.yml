@@ -19,5 +19,7 @@ jobs:
       - run: docker build -t inspectlab .
       - run: |
           docker run -d --name inspection -p 8000:8000 inspectlab
-          curl --retry 15 --retry-connrefused --retry-delay 2 -fsS http://localhost:8000/health
+          curl --retry 20 --retry-all-errors --retry-delay 2 --max-time 10 -fsS http://localhost:8000/health
           curl -fsS http://localhost:8000/ > /dev/null
+      - if: failure()
+        run: docker logs inspection || true

@@ -8,7 +8,7 @@ Visual defect detection from normal reference images. Upload a bottle, metal nut
 
 ## Results
 
-349 official MVTec AD test images across three categories. Each setting uses three reference-sampling seeds; results below average categories equally. The encoder is frozen, and every run uses the same quantized ONNX model as the demo.
+349 official MVTec AD test images across three categories. Each setting uses three reference-sampling seeds; results below average categories equally. The encoder is frozen, and transformer runs use the same quantized ONNX model as the demo.
 
 | Normal references per category | RGB image AUROC | Transformer image AUROC | Transformer pixel AUROC |
 |---|---:|---:|---:|
