@@ -1,0 +1,32 @@
+{
+  "bottle": {
+    "url": "https://www.mydrive.ch/shares/163640/9a565b9a02f45cd135e46b1c36e01ec5/download/420937370-1629958698/bottle.tar.xz",
+    "sha256": "726512129cb3b1f47d4f6cd7c7fc9170db7fc209132249c788fec06029cb5dc3",
+    "bytes": 155880244,
+    "png_files_including_masks": 355
+  },
+  "metal_nut": {
+    "url": "https://www.mydrive.ch/shares/163647/6d5a833cdee9035a45d5ce0921ecd24d/download/420937637-1629959294/metal_nut.tar.xz",
+    "sha256": "86e3c8e163ceb19146ad3ddc408e85cc34ae02e0da430e07a73bac6bbb48532a",
+    "bytes": 165414484,
+    "png_files_including_masks": 428
+  },
+  "zipper": {
+    "url": "https://www.mydrive.ch/shares/163654/7f6e6aefbf00a9e8a09cc0bbac236eb0/download/420938385-1629960680/zipper.tar.xz",
+    "sha256": "7ab46e0e195da145db30052baea3d3a5d14c5f0e710137c968e0423f02cb942d",
+    "bytes": 159484784,
+    "png_files_including_masks": 510
+  },
+  "model/config.json": {
+    "url": "https://huggingface.co/facebook/dinov2-small/resolve/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+    "sha256": "1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d"
+  },
+  "model/model.safetensors": {
+    "url": "https://huggingface.co/facebook/dinov2-small/resolve/ed25f3a31f01632728cabb09d1542f84ab7b0056/model.safetensors",
+    "sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1"
+  },
+  "model/preprocessor_config.json": {
+    "url": "https://huggingface.co/facebook/dinov2-small/resolve/ed25f3a31f01632728cabb09d1542f84ab7b0056/preprocessor_config.json",
+    "sha256": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828"
+  }
+}

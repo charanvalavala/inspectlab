@@ -1,0 +1,21 @@
+{
+  "model": "facebook/dinov2-small",
+  "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+  "input": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "output": [
+    1,
+    256,
+    384
+  ],
+  "quantization": "Dynamic per-channel INT8 MatMul/Gemm weights; convolution remains float32",
+  "bytes": 25074653,
+  "sha256": "cd69c636b7385f838beb9f16221d4068a368c77e5ca0619d619921aa9926730f",
+  "random_input_patch_cosine_mean": 0.9944440126419067,
+  "random_input_patch_cosine_min": 0.9739255905151367,
+  "all_benchmarks_use": "This exact quantized ONNX artifact, not the source PyTorch encoder"
+}

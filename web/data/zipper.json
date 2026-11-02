@@ -1,0 +1,27 @@
+{
+  "shape": [
+    4096,
+    384
+  ],
+  "threshold": 0.1675531417131424,
+  "map_scale": 0.44798144698143005,
+  "references": [
+    "zipper\\train\\good\\079.png",
+    "zipper\\train\\good\\186.png",
+    "zipper\\train\\good\\013.png",
+    "zipper\\train\\good\\169.png",
+    "zipper\\train\\good\\239.png",
+    "zipper\\train\\good\\037.png",
+    "zipper\\train\\good\\167.png",
+    "zipper\\train\\good\\111.png",
+    "zipper\\train\\good\\124.png",
+    "zipper\\train\\good\\014.png",
+    "zipper\\train\\good\\112.png",
+    "zipper\\train\\good\\117.png",
+    "zipper\\train\\good\\073.png",
+    "zipper\\train\\good\\016.png",
+    "zipper\\train\\good\\128.png",
+    "zipper\\train\\good\\034.png"
+  ],
+  "encoder_sha256": "cd69c636b7385f838beb9f16221d4068a368c77e5ca0619d619921aa9926730f"
+}

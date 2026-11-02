@@ -1,0 +1,240 @@
+[
+  {
+    "id": "bottle-0",
+    "category": "bottle",
+    "truth": "broken_large",
+    "source": "bottle\\test\\broken_large\\000.png",
+    "benchmark_score": 0.3992840051651001
+  },
+  {
+    "id": "bottle-1",
+    "category": "bottle",
+    "truth": "broken_large",
+    "source": "bottle\\test\\broken_large\\001.png",
+    "benchmark_score": 0.39050379395484924
+  },
+  {
+    "id": "bottle-20",
+    "category": "bottle",
+    "truth": "broken_small",
+    "source": "bottle\\test\\broken_small\\000.png",
+    "benchmark_score": 0.24370969831943512
+  },
+  {
+    "id": "bottle-21",
+    "category": "bottle",
+    "truth": "broken_small",
+    "source": "bottle\\test\\broken_small\\001.png",
+    "benchmark_score": 0.38573959469795227
+  },
+  {
+    "id": "bottle-42",
+    "category": "bottle",
+    "truth": "contamination",
+    "source": "bottle\\test\\contamination\\000.png",
+    "benchmark_score": 0.46009957790374756
+  },
+  {
+    "id": "bottle-43",
+    "category": "bottle",
+    "truth": "contamination",
+    "source": "bottle\\test\\contamination\\001.png",
+    "benchmark_score": 0.31546750664711
+  },
+  {
+    "id": "bottle-63",
+    "category": "bottle",
+    "truth": "good",
+    "source": "bottle\\test\\good\\000.png",
+    "benchmark_score": 0.09520091861486435
+  },
+  {
+    "id": "bottle-64",
+    "category": "bottle",
+    "truth": "good",
+    "source": "bottle\\test\\good\\001.png",
+    "benchmark_score": 0.11376136541366577
+  },
+  {
+    "id": "metal_nut-0",
+    "category": "metal_nut",
+    "truth": "bent",
+    "source": "metal_nut\\test\\bent\\000.png",
+    "benchmark_score": 0.36853015422821045
+  },
+  {
+    "id": "metal_nut-1",
+    "category": "metal_nut",
+    "truth": "bent",
+    "source": "metal_nut\\test\\bent\\001.png",
+    "benchmark_score": 0.3705977499485016
+  },
+  {
+    "id": "metal_nut-25",
+    "category": "metal_nut",
+    "truth": "color",
+    "source": "metal_nut\\test\\color\\000.png",
+    "benchmark_score": 0.45198941230773926
+  },
+  {
+    "id": "metal_nut-26",
+    "category": "metal_nut",
+    "truth": "color",
+    "source": "metal_nut\\test\\color\\001.png",
+    "benchmark_score": 0.48959794640541077
+  },
+  {
+    "id": "metal_nut-47",
+    "category": "metal_nut",
+    "truth": "flip",
+    "source": "metal_nut\\test\\flip\\000.png",
+    "benchmark_score": 0.31664806604385376
+  },
+  {
+    "id": "metal_nut-48",
+    "category": "metal_nut",
+    "truth": "flip",
+    "source": "metal_nut\\test\\flip\\001.png",
+    "benchmark_score": 0.3876833915710449
+  },
+  {
+    "id": "metal_nut-70",
+    "category": "metal_nut",
+    "truth": "good",
+    "source": "metal_nut\\test\\good\\000.png",
+    "benchmark_score": 0.13266795873641968
+  },
+  {
+    "id": "metal_nut-71",
+    "category": "metal_nut",
+    "truth": "good",
+    "source": "metal_nut\\test\\good\\001.png",
+    "benchmark_score": 0.14578594267368317
+  },
+  {
+    "id": "metal_nut-92",
+    "category": "metal_nut",
+    "truth": "scratch",
+    "source": "metal_nut\\test\\scratch\\000.png",
+    "benchmark_score": 0.22131799161434174
+  },
+  {
+    "id": "metal_nut-93",
+    "category": "metal_nut",
+    "truth": "scratch",
+    "source": "metal_nut\\test\\scratch\\001.png",
+    "benchmark_score": 0.3074530065059662
+  },
+  {
+    "id": "zipper-0",
+    "category": "zipper",
+    "truth": "broken_teeth",
+    "source": "zipper\\test\\broken_teeth\\000.png",
+    "benchmark_score": 0.22829894721508026
+  },
+  {
+    "id": "zipper-1",
+    "category": "zipper",
+    "truth": "broken_teeth",
+    "source": "zipper\\test\\broken_teeth\\001.png",
+    "benchmark_score": 0.31578242778778076
+  },
+  {
+    "id": "zipper-19",
+    "category": "zipper",
+    "truth": "combined",
+    "source": "zipper\\test\\combined\\000.png",
+    "benchmark_score": 0.4674821197986603
+  },
+  {
+    "id": "zipper-20",
+    "category": "zipper",
+    "truth": "combined",
+    "source": "zipper\\test\\combined\\001.png",
+    "benchmark_score": 0.291488915681839
+  },
+  {
+    "id": "zipper-35",
+    "category": "zipper",
+    "truth": "fabric_border",
+    "source": "zipper\\test\\fabric_border\\000.png",
+    "benchmark_score": 0.47782960534095764
+  },
+  {
+    "id": "zipper-36",
+    "category": "zipper",
+    "truth": "fabric_border",
+    "source": "zipper\\test\\fabric_border\\001.png",
+    "benchmark_score": 0.6039305329322815
+  },
+  {
+    "id": "zipper-52",
+    "category": "zipper",
+    "truth": "fabric_interior",
+    "source": "zipper\\test\\fabric_interior\\000.png",
+    "benchmark_score": 0.5276493430137634
+  },
+  {
+    "id": "zipper-53",
+    "category": "zipper",
+    "truth": "fabric_interior",
+    "source": "zipper\\test\\fabric_interior\\001.png",
+    "benchmark_score": 0.33752545714378357
+  },
+  {
+    "id": "zipper-68",
+    "category": "zipper",
+    "truth": "good",
+    "source": "zipper\\test\\good\\000.png",
+    "benchmark_score": 0.10589738935232162
+  },
+  {
+    "id": "zipper-69",
+    "category": "zipper",
+    "truth": "good",
+    "source": "zipper\\test\\good\\001.png",
+    "benchmark_score": 0.13031436502933502
+  },
+  {
+    "id": "zipper-100",
+    "category": "zipper",
+    "truth": "rough",
+    "source": "zipper\\test\\rough\\000.png",
+    "benchmark_score": 0.4229547083377838
+  },
+  {
+    "id": "zipper-101",
+    "category": "zipper",
+    "truth": "rough",
+    "source": "zipper\\test\\rough\\001.png",
+    "benchmark_score": 0.41071590781211853
+  },
+  {
+    "id": "zipper-117",
+    "category": "zipper",
+    "truth": "split_teeth",
+    "source": "zipper\\test\\split_teeth\\000.png",
+    "benchmark_score": 0.16369783878326416
+  },
+  {
+    "id": "zipper-118",
+    "category": "zipper",
+    "truth": "split_teeth",
+    "source": "zipper\\test\\split_teeth\\001.png",
+    "benchmark_score": 0.19043362140655518
+  },
+  {
+    "id": "zipper-135",
+    "category": "zipper",
+    "truth": "squeezed_teeth",
+    "source": "zipper\\test\\squeezed_teeth\\000.png",
+    "benchmark_score": 0.20901371538639069
+  },
+  {
+    "id": "zipper-136",
+    "category": "zipper",
+    "truth": "squeezed_teeth",
+    "source": "zipper\\test\\squeezed_teeth\\001.png",
+    "benchmark_score": 0.2465287446975708
+  }
+]

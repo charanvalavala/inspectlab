@@ -1,0 +1,27 @@
+{
+  "shape": [
+    4096,
+    384
+  ],
+  "threshold": 0.19450365006923676,
+  "map_scale": 0.42898988723754883,
+  "references": [
+    "metal_nut\\train\\good\\034.png",
+    "metal_nut\\train\\good\\084.png",
+    "metal_nut\\train\\good\\156.png",
+    "metal_nut\\train\\good\\014.png",
+    "metal_nut\\train\\good\\073.png",
+    "metal_nut\\train\\good\\191.png",
+    "metal_nut\\train\\good\\209.png",
+    "metal_nut\\train\\good\\128.png",
+    "metal_nut\\train\\good\\016.png",
+    "metal_nut\\train\\good\\024.png",
+    "metal_nut\\train\\good\\154.png",
+    "metal_nut\\train\\good\\098.png",
+    "metal_nut\\train\\good\\186.png",
+    "metal_nut\\train\\good\\104.png",
+    "metal_nut\\train\\good\\111.png",
+    "metal_nut\\train\\good\\048.png"
+  ],
+  "encoder_sha256": "cd69c636b7385f838beb9f16221d4068a368c77e5ca0619d619921aa9926730f"
+}

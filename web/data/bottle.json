@@ -1,0 +1,27 @@
+{
+  "shape": [
+    4096,
+    384
+  ],
+  "threshold": 0.15485142171382904,
+  "map_scale": 0.4883146286010742,
+  "references": [
+    "bottle\\train\\good\\072.png",
+    "bottle\\train\\good\\016.png",
+    "bottle\\train\\good\\141.png",
+    "bottle\\train\\good\\026.png",
+    "bottle\\train\\good\\084.png",
+    "bottle\\train\\good\\043.png",
+    "bottle\\train\\good\\154.png",
+    "bottle\\train\\good\\198.png",
+    "bottle\\train\\good\\158.png",
+    "bottle\\train\\good\\024.png",
+    "bottle\\train\\good\\014.png",
+    "bottle\\train\\good\\179.png",
+    "bottle\\train\\good\\038.png",
+    "bottle\\train\\good\\073.png",
+    "bottle\\train\\good\\098.png",
+    "bottle\\train\\good\\112.png"
+  ],
+  "encoder_sha256": "cd69c636b7385f838beb9f16221d4068a368c77e5ca0619d619921aa9926730f"
+}

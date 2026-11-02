@@ -1,0 +1,2003 @@
+{
+  "dataset": "MVTec AD",
+  "categories": [
+    "bottle",
+    "metal_nut",
+    "zipper"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "shots": [
+    1,
+    4,
+    16
+  ],
+  "encoder": {
+    "model": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "input": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output": [
+      1,
+      256,
+      384
+    ],
+    "quantization": "Dynamic per-channel INT8 MatMul/Gemm weights; convolution remains float32",
+    "bytes": 25074653,
+    "sha256": "cd69c636b7385f838beb9f16221d4068a368c77e5ca0619d619921aa9926730f",
+    "random_input_patch_cosine_mean": 0.9944440126419067,
+    "random_input_patch_cosine_min": 0.9739255905151367,
+    "all_benchmarks_use": "This exact quantized ONNX artifact, not the source PyTorch encoder"
+  },
+  "protocol": {
+    "resolution": 224,
+    "map_evaluation_resolution": 56,
+    "calibration": "Every fifth sorted normal training image; excluded from reference sampling",
+    "threshold": "95th percentile of held-out-normal image scores, method=higher",
+    "image_score": "Mean of largest 1% of patch cosine distances",
+    "localization": "Bilinear 16x16 to 56x56 anomaly map, Gaussian sigma=1; masks nearest-resized",
+    "selection": "Fixed settings; no defective training images or test-tuned thresholds",
+    "demo": "Preselected seed 17, 16 references per category",
+    "corruptions": "Blur radius 2, brightness x0.65, JPEG quality 25; applied after resizing, references unchanged"
+  },
+  "environment": {
+    "python": "3.13.9",
+    "onnxruntime": "1.31.1",
+    "device": "CPU",
+    "threads": 4
+  },
+  "inventory": {
+    "bottle": {
+      "reference_pool": 167,
+      "calibration_normal": 42,
+      "test_normal": 20,
+      "test_anomalous": 63
+    },
+    "metal_nut": {
+      "reference_pool": 176,
+      "calibration_normal": 44,
+      "test_normal": 22,
+      "test_anomalous": 93
+    },
+    "zipper": {
+      "reference_pool": 192,
+      "calibration_normal": 48,
+      "test_normal": 32,
+      "test_anomalous": 119
+    }
+  },
+  "runs": [
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png"
+      ],
+      "image_auroc": 0.9984126984126984,
+      "image_ap": 0.999500031494079,
+      "pixel_auroc_56": 0.9884893117067567,
+      "confusion": [
+        [
+          17,
+          3
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.15,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.25278833508491516
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png",
+        ".cache\\data\\bottle\\train\\good\\016.png",
+        ".cache\\data\\bottle\\train\\good\\141.png",
+        ".cache\\data\\bottle\\train\\good\\026.png"
+      ],
+      "image_auroc": 0.9992063492063492,
+      "image_ap": 0.999751984126984,
+      "pixel_auroc_56": 0.988062488396489,
+      "confusion": [
+        [
+          20,
+          0
+        ],
+        [
+          1,
+          62
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.9841269841269841,
+      "threshold": 0.22144414484500885
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png",
+        ".cache\\data\\bottle\\train\\good\\016.png",
+        ".cache\\data\\bottle\\train\\good\\141.png",
+        ".cache\\data\\bottle\\train\\good\\026.png",
+        ".cache\\data\\bottle\\train\\good\\084.png",
+        ".cache\\data\\bottle\\train\\good\\043.png",
+        ".cache\\data\\bottle\\train\\good\\154.png",
+        ".cache\\data\\bottle\\train\\good\\198.png",
+        ".cache\\data\\bottle\\train\\good\\158.png",
+        ".cache\\data\\bottle\\train\\good\\024.png",
+        ".cache\\data\\bottle\\train\\good\\014.png",
+        ".cache\\data\\bottle\\train\\good\\179.png",
+        ".cache\\data\\bottle\\train\\good\\038.png",
+        ".cache\\data\\bottle\\train\\good\\073.png",
+        ".cache\\data\\bottle\\train\\good\\098.png",
+        ".cache\\data\\bottle\\train\\good\\112.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 0.9999999999999998,
+      "pixel_auroc_56": 0.9888110649599282,
+      "confusion": [
+        [
+          18,
+          2
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.1,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.15485142171382904
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png"
+      ],
+      "image_auroc": 0.996031746031746,
+      "image_ap": 0.9987192514695127,
+      "pixel_auroc_56": 0.9878536136941112,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.2406548112630844
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png",
+        ".cache\\data\\bottle\\train\\good\\204.png",
+        ".cache\\data\\bottle\\train\\good\\174.png",
+        ".cache\\data\\bottle\\train\\good\\202.png"
+      ],
+      "image_auroc": 0.9976190476190476,
+      "image_ap": 0.9992440151090303,
+      "pixel_auroc_56": 0.9886102046226101,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.22483159601688385
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png",
+        ".cache\\data\\bottle\\train\\good\\204.png",
+        ".cache\\data\\bottle\\train\\good\\174.png",
+        ".cache\\data\\bottle\\train\\good\\202.png",
+        ".cache\\data\\bottle\\train\\good\\088.png",
+        ".cache\\data\\bottle\\train\\good\\011.png",
+        ".cache\\data\\bottle\\train\\good\\036.png",
+        ".cache\\data\\bottle\\train\\good\\037.png",
+        ".cache\\data\\bottle\\train\\good\\194.png",
+        ".cache\\data\\bottle\\train\\good\\197.png",
+        ".cache\\data\\bottle\\train\\good\\018.png",
+        ".cache\\data\\bottle\\train\\good\\026.png",
+        ".cache\\data\\bottle\\train\\good\\094.png",
+        ".cache\\data\\bottle\\train\\good\\134.png",
+        ".cache\\data\\bottle\\train\\good\\201.png",
+        ".cache\\data\\bottle\\train\\good\\164.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 0.9999999999999998,
+      "pixel_auroc_56": 0.9883993742099629,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.18722206354141235
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 0.9999999999999998,
+      "pixel_auroc_56": 0.9860398662798662,
+      "confusion": [
+        [
+          20,
+          0
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.29956331849098206
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png",
+        ".cache\\data\\bottle\\train\\good\\066.png",
+        ".cache\\data\\bottle\\train\\good\\029.png",
+        ".cache\\data\\bottle\\train\\good\\042.png"
+      ],
+      "image_auroc": 0.9992063492063492,
+      "image_ap": 0.999751984126984,
+      "pixel_auroc_56": 0.988224147902734,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.20476283133029938
+    },
+    {
+      "category": "bottle",
+      "method": "dino",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png",
+        ".cache\\data\\bottle\\train\\good\\066.png",
+        ".cache\\data\\bottle\\train\\good\\029.png",
+        ".cache\\data\\bottle\\train\\good\\042.png",
+        ".cache\\data\\bottle\\train\\good\\007.png",
+        ".cache\\data\\bottle\\train\\good\\088.png",
+        ".cache\\data\\bottle\\train\\good\\018.png",
+        ".cache\\data\\bottle\\train\\good\\194.png",
+        ".cache\\data\\bottle\\train\\good\\177.png",
+        ".cache\\data\\bottle\\train\\good\\117.png",
+        ".cache\\data\\bottle\\train\\good\\023.png",
+        ".cache\\data\\bottle\\train\\good\\123.png",
+        ".cache\\data\\bottle\\train\\good\\089.png",
+        ".cache\\data\\bottle\\train\\good\\183.png",
+        ".cache\\data\\bottle\\train\\good\\003.png",
+        ".cache\\data\\bottle\\train\\good\\178.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 0.9999999999999998,
+      "pixel_auroc_56": 0.9886235387524088,
+      "confusion": [
+        [
+          18,
+          2
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.1,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.18002521991729736
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png"
+      ],
+      "image_auroc": 0.9555555555555555,
+      "image_ap": 0.9867611902688784,
+      "pixel_auroc_56": 0.9431449642055292,
+      "confusion": [
+        [
+          17,
+          3
+        ],
+        [
+          6,
+          57
+        ]
+      ],
+      "normal_false_positive_rate": 0.15,
+      "anomaly_recall_at_threshold": 0.9047619047619048,
+      "threshold": 0.004398465156555176
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png",
+        ".cache\\data\\bottle\\train\\good\\016.png",
+        ".cache\\data\\bottle\\train\\good\\141.png",
+        ".cache\\data\\bottle\\train\\good\\026.png"
+      ],
+      "image_auroc": 0.9634920634920635,
+      "image_ap": 0.9897056135851474,
+      "pixel_auroc_56": 0.9480250618869078,
+      "confusion": [
+        [
+          17,
+          3
+        ],
+        [
+          4,
+          59
+        ]
+      ],
+      "normal_false_positive_rate": 0.15,
+      "anomaly_recall_at_threshold": 0.9365079365079365,
+      "threshold": 0.003160198451951146
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\072.png",
+        ".cache\\data\\bottle\\train\\good\\016.png",
+        ".cache\\data\\bottle\\train\\good\\141.png",
+        ".cache\\data\\bottle\\train\\good\\026.png",
+        ".cache\\data\\bottle\\train\\good\\084.png",
+        ".cache\\data\\bottle\\train\\good\\043.png",
+        ".cache\\data\\bottle\\train\\good\\154.png",
+        ".cache\\data\\bottle\\train\\good\\198.png",
+        ".cache\\data\\bottle\\train\\good\\158.png",
+        ".cache\\data\\bottle\\train\\good\\024.png",
+        ".cache\\data\\bottle\\train\\good\\014.png",
+        ".cache\\data\\bottle\\train\\good\\179.png",
+        ".cache\\data\\bottle\\train\\good\\038.png",
+        ".cache\\data\\bottle\\train\\good\\073.png",
+        ".cache\\data\\bottle\\train\\good\\098.png",
+        ".cache\\data\\bottle\\train\\good\\112.png"
+      ],
+      "image_auroc": 0.9547619047619046,
+      "image_ap": 0.98747390586826,
+      "pixel_auroc_56": 0.9541564109250827,
+      "confusion": [
+        [
+          17,
+          3
+        ],
+        [
+          3,
+          60
+        ]
+      ],
+      "normal_false_positive_rate": 0.15,
+      "anomaly_recall_at_threshold": 0.9523809523809523,
+      "threshold": 0.0019121567020192742
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png"
+      ],
+      "image_auroc": 0.961111111111111,
+      "image_ap": 0.988450714858315,
+      "pixel_auroc_56": 0.9435645439840114,
+      "confusion": [
+        [
+          18,
+          2
+        ],
+        [
+          7,
+          56
+        ]
+      ],
+      "normal_false_positive_rate": 0.1,
+      "anomaly_recall_at_threshold": 0.8888888888888888,
+      "threshold": 0.004347741603851318
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png",
+        ".cache\\data\\bottle\\train\\good\\204.png",
+        ".cache\\data\\bottle\\train\\good\\174.png",
+        ".cache\\data\\bottle\\train\\good\\202.png"
+      ],
+      "image_auroc": 0.9714285714285714,
+      "image_ap": 0.9912466780231683,
+      "pixel_auroc_56": 0.9529357384363065,
+      "confusion": [
+        [
+          18,
+          2
+        ],
+        [
+          3,
+          60
+        ]
+      ],
+      "normal_false_positive_rate": 0.1,
+      "anomaly_recall_at_threshold": 0.9523809523809523,
+      "threshold": 0.003010769607499242
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\142.png",
+        ".cache\\data\\bottle\\train\\good\\204.png",
+        ".cache\\data\\bottle\\train\\good\\174.png",
+        ".cache\\data\\bottle\\train\\good\\202.png",
+        ".cache\\data\\bottle\\train\\good\\088.png",
+        ".cache\\data\\bottle\\train\\good\\011.png",
+        ".cache\\data\\bottle\\train\\good\\036.png",
+        ".cache\\data\\bottle\\train\\good\\037.png",
+        ".cache\\data\\bottle\\train\\good\\194.png",
+        ".cache\\data\\bottle\\train\\good\\197.png",
+        ".cache\\data\\bottle\\train\\good\\018.png",
+        ".cache\\data\\bottle\\train\\good\\026.png",
+        ".cache\\data\\bottle\\train\\good\\094.png",
+        ".cache\\data\\bottle\\train\\good\\134.png",
+        ".cache\\data\\bottle\\train\\good\\201.png",
+        ".cache\\data\\bottle\\train\\good\\164.png"
+      ],
+      "image_auroc": 0.9817460317460317,
+      "image_ap": 0.995148753404967,
+      "pixel_auroc_56": 0.9558242591589211,
+      "confusion": [
+        [
+          20,
+          0
+        ],
+        [
+          4,
+          59
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.9365079365079365,
+      "threshold": 0.0024892687797546387
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png"
+      ],
+      "image_auroc": 0.9214285714285715,
+      "image_ap": 0.9782613223123235,
+      "pixel_auroc_56": 0.939084920379471,
+      "confusion": [
+        [
+          16,
+          4
+        ],
+        [
+          7,
+          56
+        ]
+      ],
+      "normal_false_positive_rate": 0.2,
+      "anomaly_recall_at_threshold": 0.8888888888888888,
+      "threshold": 0.004916349891573191
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png",
+        ".cache\\data\\bottle\\train\\good\\066.png",
+        ".cache\\data\\bottle\\train\\good\\029.png",
+        ".cache\\data\\bottle\\train\\good\\042.png"
+      ],
+      "image_auroc": 0.9626984126984127,
+      "image_ap": 0.9895741130057181,
+      "pixel_auroc_56": 0.9504685810338878,
+      "confusion": [
+        [
+          18,
+          2
+        ],
+        [
+          4,
+          59
+        ]
+      ],
+      "normal_false_positive_rate": 0.1,
+      "anomaly_recall_at_threshold": 0.9365079365079365,
+      "threshold": 0.0028842489700764418
+    },
+    {
+      "category": "bottle",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\bottle\\train\\good\\124.png",
+        ".cache\\data\\bottle\\train\\good\\066.png",
+        ".cache\\data\\bottle\\train\\good\\029.png",
+        ".cache\\data\\bottle\\train\\good\\042.png",
+        ".cache\\data\\bottle\\train\\good\\007.png",
+        ".cache\\data\\bottle\\train\\good\\088.png",
+        ".cache\\data\\bottle\\train\\good\\018.png",
+        ".cache\\data\\bottle\\train\\good\\194.png",
+        ".cache\\data\\bottle\\train\\good\\177.png",
+        ".cache\\data\\bottle\\train\\good\\117.png",
+        ".cache\\data\\bottle\\train\\good\\023.png",
+        ".cache\\data\\bottle\\train\\good\\123.png",
+        ".cache\\data\\bottle\\train\\good\\089.png",
+        ".cache\\data\\bottle\\train\\good\\183.png",
+        ".cache\\data\\bottle\\train\\good\\003.png",
+        ".cache\\data\\bottle\\train\\good\\178.png"
+      ],
+      "image_auroc": 0.9714285714285714,
+      "image_ap": 0.9918075749065041,
+      "pixel_auroc_56": 0.9561346277663416,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          4,
+          59
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 0.9365079365079365,
+      "threshold": 0.0019896626472473145
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png"
+      ],
+      "image_auroc": 0.9951124144672532,
+      "image_ap": 0.9988490904328804,
+      "pixel_auroc_56": 0.9257039327963994,
+      "confusion": [
+        [
+          21,
+          1
+        ],
+        [
+          3,
+          90
+        ]
+      ],
+      "normal_false_positive_rate": 0.045454545454545456,
+      "anomaly_recall_at_threshold": 0.967741935483871,
+      "threshold": 0.3225134611129761
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png",
+        ".cache\\data\\metal_nut\\train\\good\\084.png",
+        ".cache\\data\\metal_nut\\train\\good\\156.png",
+        ".cache\\data\\metal_nut\\train\\good\\014.png"
+      ],
+      "image_auroc": 0.9980449657869013,
+      "image_ap": 0.9995565901784724,
+      "pixel_auroc_56": 0.9444579709666632,
+      "confusion": [
+        [
+          20,
+          2
+        ],
+        [
+          1,
+          92
+        ]
+      ],
+      "normal_false_positive_rate": 0.09090909090909091,
+      "anomaly_recall_at_threshold": 0.989247311827957,
+      "threshold": 0.23343823850154877
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png",
+        ".cache\\data\\metal_nut\\train\\good\\084.png",
+        ".cache\\data\\metal_nut\\train\\good\\156.png",
+        ".cache\\data\\metal_nut\\train\\good\\014.png",
+        ".cache\\data\\metal_nut\\train\\good\\073.png",
+        ".cache\\data\\metal_nut\\train\\good\\191.png",
+        ".cache\\data\\metal_nut\\train\\good\\209.png",
+        ".cache\\data\\metal_nut\\train\\good\\128.png",
+        ".cache\\data\\metal_nut\\train\\good\\016.png",
+        ".cache\\data\\metal_nut\\train\\good\\024.png",
+        ".cache\\data\\metal_nut\\train\\good\\154.png",
+        ".cache\\data\\metal_nut\\train\\good\\098.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\104.png",
+        ".cache\\data\\metal_nut\\train\\good\\111.png",
+        ".cache\\data\\metal_nut\\train\\good\\048.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9559353599206425,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.19450365006923676
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png"
+      ],
+      "image_auroc": 0.9941348973607038,
+      "image_ap": 0.9987272690926294,
+      "pixel_auroc_56": 0.8963584250518528,
+      "confusion": [
+        [
+          18,
+          4
+        ],
+        [
+          1,
+          92
+        ]
+      ],
+      "normal_false_positive_rate": 0.18181818181818182,
+      "anomaly_recall_at_threshold": 0.989247311827957,
+      "threshold": 0.2919533848762512
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png",
+        ".cache\\data\\metal_nut\\train\\good\\138.png",
+        ".cache\\data\\metal_nut\\train\\good\\109.png",
+        ".cache\\data\\metal_nut\\train\\good\\148.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9486352611048944,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.24122865498065948
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png",
+        ".cache\\data\\metal_nut\\train\\good\\138.png",
+        ".cache\\data\\metal_nut\\train\\good\\109.png",
+        ".cache\\data\\metal_nut\\train\\good\\148.png",
+        ".cache\\data\\metal_nut\\train\\good\\011.png",
+        ".cache\\data\\metal_nut\\train\\good\\054.png",
+        ".cache\\data\\metal_nut\\train\\good\\036.png",
+        ".cache\\data\\metal_nut\\train\\good\\212.png",
+        ".cache\\data\\metal_nut\\train\\good\\066.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\102.png",
+        ".cache\\data\\metal_nut\\train\\good\\018.png",
+        ".cache\\data\\metal_nut\\train\\good\\037.png",
+        ".cache\\data\\metal_nut\\train\\good\\206.png",
+        ".cache\\data\\metal_nut\\train\\good\\208.png",
+        ".cache\\data\\metal_nut\\train\\good\\141.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9566554391109425,
+      "confusion": [
+        [
+          21,
+          1
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.045454545454545456,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.19781319797039032
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png"
+      ],
+      "image_auroc": 0.9931573802541545,
+      "image_ap": 0.9983764683602625,
+      "pixel_auroc_56": 0.9106165779484052,
+      "confusion": [
+        [
+          19,
+          3
+        ],
+        [
+          1,
+          92
+        ]
+      ],
+      "normal_false_positive_rate": 0.13636363636363635,
+      "anomaly_recall_at_threshold": 0.989247311827957,
+      "threshold": 0.2874719202518463
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png",
+        ".cache\\data\\metal_nut\\train\\good\\007.png",
+        ".cache\\data\\metal_nut\\train\\good\\082.png",
+        ".cache\\data\\metal_nut\\train\\good\\158.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9411523566774433,
+      "confusion": [
+        [
+          21,
+          1
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.045454545454545456,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.22739408910274506
+    },
+    {
+      "category": "metal_nut",
+      "method": "dino",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png",
+        ".cache\\data\\metal_nut\\train\\good\\007.png",
+        ".cache\\data\\metal_nut\\train\\good\\082.png",
+        ".cache\\data\\metal_nut\\train\\good\\158.png",
+        ".cache\\data\\metal_nut\\train\\good\\023.png",
+        ".cache\\data\\metal_nut\\train\\good\\169.png",
+        ".cache\\data\\metal_nut\\train\\good\\132.png",
+        ".cache\\data\\metal_nut\\train\\good\\206.png",
+        ".cache\\data\\metal_nut\\train\\good\\018.png",
+        ".cache\\data\\metal_nut\\train\\good\\193.png",
+        ".cache\\data\\metal_nut\\train\\good\\029.png",
+        ".cache\\data\\metal_nut\\train\\good\\003.png",
+        ".cache\\data\\metal_nut\\train\\good\\042.png",
+        ".cache\\data\\metal_nut\\train\\good\\168.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\047.png"
+      ],
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9575033954592571,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.195954367518425
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png"
+      ],
+      "image_auroc": 0.5361681329423265,
+      "image_ap": 0.8155972744471185,
+      "pixel_auroc_56": 0.639261681041376,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          91,
+          2
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.021505376344086023,
+      "threshold": 0.03447975590825081
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png",
+        ".cache\\data\\metal_nut\\train\\good\\084.png",
+        ".cache\\data\\metal_nut\\train\\good\\156.png",
+        ".cache\\data\\metal_nut\\train\\good\\014.png"
+      ],
+      "image_auroc": 0.5591397849462365,
+      "image_ap": 0.8496328505875443,
+      "pixel_auroc_56": 0.6761749872514785,
+      "confusion": [
+        [
+          20,
+          2
+        ],
+        [
+          74,
+          19
+        ]
+      ],
+      "normal_false_positive_rate": 0.09090909090909091,
+      "anomaly_recall_at_threshold": 0.20430107526881722,
+      "threshold": 0.01864679716527462
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\034.png",
+        ".cache\\data\\metal_nut\\train\\good\\084.png",
+        ".cache\\data\\metal_nut\\train\\good\\156.png",
+        ".cache\\data\\metal_nut\\train\\good\\014.png",
+        ".cache\\data\\metal_nut\\train\\good\\073.png",
+        ".cache\\data\\metal_nut\\train\\good\\191.png",
+        ".cache\\data\\metal_nut\\train\\good\\209.png",
+        ".cache\\data\\metal_nut\\train\\good\\128.png",
+        ".cache\\data\\metal_nut\\train\\good\\016.png",
+        ".cache\\data\\metal_nut\\train\\good\\024.png",
+        ".cache\\data\\metal_nut\\train\\good\\154.png",
+        ".cache\\data\\metal_nut\\train\\good\\098.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\104.png",
+        ".cache\\data\\metal_nut\\train\\good\\111.png",
+        ".cache\\data\\metal_nut\\train\\good\\048.png"
+      ],
+      "image_auroc": 0.68475073313783,
+      "image_ap": 0.9048560365180396,
+      "pixel_auroc_56": 0.7397880266073711,
+      "confusion": [
+        [
+          21,
+          1
+        ],
+        [
+          75,
+          18
+        ]
+      ],
+      "normal_false_positive_rate": 0.045454545454545456,
+      "anomaly_recall_at_threshold": 0.1935483870967742,
+      "threshold": 0.01233921479433775
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png"
+      ],
+      "image_auroc": 0.41739980449657865,
+      "image_ap": 0.7746959790730052,
+      "pixel_auroc_56": 0.5883021445509484,
+      "confusion": [
+        [
+          20,
+          2
+        ],
+        [
+          88,
+          5
+        ]
+      ],
+      "normal_false_positive_rate": 0.09090909090909091,
+      "anomaly_recall_at_threshold": 0.053763440860215055,
+      "threshold": 0.031113604083657265
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png",
+        ".cache\\data\\metal_nut\\train\\good\\138.png",
+        ".cache\\data\\metal_nut\\train\\good\\109.png",
+        ".cache\\data\\metal_nut\\train\\good\\148.png"
+      ],
+      "image_auroc": 0.5395894428152492,
+      "image_ap": 0.8498062353327505,
+      "pixel_auroc_56": 0.6969766728842083,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          84,
+          9
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.0967741935483871,
+      "threshold": 0.019704222679138184
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\136.png",
+        ".cache\\data\\metal_nut\\train\\good\\138.png",
+        ".cache\\data\\metal_nut\\train\\good\\109.png",
+        ".cache\\data\\metal_nut\\train\\good\\148.png",
+        ".cache\\data\\metal_nut\\train\\good\\011.png",
+        ".cache\\data\\metal_nut\\train\\good\\054.png",
+        ".cache\\data\\metal_nut\\train\\good\\036.png",
+        ".cache\\data\\metal_nut\\train\\good\\212.png",
+        ".cache\\data\\metal_nut\\train\\good\\066.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\102.png",
+        ".cache\\data\\metal_nut\\train\\good\\018.png",
+        ".cache\\data\\metal_nut\\train\\good\\037.png",
+        ".cache\\data\\metal_nut\\train\\good\\206.png",
+        ".cache\\data\\metal_nut\\train\\good\\208.png",
+        ".cache\\data\\metal_nut\\train\\good\\141.png"
+      ],
+      "image_auroc": 0.749266862170088,
+      "image_ap": 0.9344554625528012,
+      "pixel_auroc_56": 0.7524383331056375,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          73,
+          20
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.21505376344086022,
+      "threshold": 0.01248429249972105
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png"
+      ],
+      "image_auroc": 0.5117302052785924,
+      "image_ap": 0.8311061979254248,
+      "pixel_auroc_56": 0.6161611470927424,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          93,
+          0
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.0,
+      "threshold": 0.036956965923309326
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png",
+        ".cache\\data\\metal_nut\\train\\good\\007.png",
+        ".cache\\data\\metal_nut\\train\\good\\082.png",
+        ".cache\\data\\metal_nut\\train\\good\\158.png"
+      ],
+      "image_auroc": 0.655425219941349,
+      "image_ap": 0.879300837921404,
+      "pixel_auroc_56": 0.6734404747448743,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          92,
+          1
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.010752688172043012,
+      "threshold": 0.023668905720114708
+    },
+    {
+      "category": "metal_nut",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\metal_nut\\train\\good\\124.png",
+        ".cache\\data\\metal_nut\\train\\good\\007.png",
+        ".cache\\data\\metal_nut\\train\\good\\082.png",
+        ".cache\\data\\metal_nut\\train\\good\\158.png",
+        ".cache\\data\\metal_nut\\train\\good\\023.png",
+        ".cache\\data\\metal_nut\\train\\good\\169.png",
+        ".cache\\data\\metal_nut\\train\\good\\132.png",
+        ".cache\\data\\metal_nut\\train\\good\\206.png",
+        ".cache\\data\\metal_nut\\train\\good\\018.png",
+        ".cache\\data\\metal_nut\\train\\good\\193.png",
+        ".cache\\data\\metal_nut\\train\\good\\029.png",
+        ".cache\\data\\metal_nut\\train\\good\\003.png",
+        ".cache\\data\\metal_nut\\train\\good\\042.png",
+        ".cache\\data\\metal_nut\\train\\good\\168.png",
+        ".cache\\data\\metal_nut\\train\\good\\186.png",
+        ".cache\\data\\metal_nut\\train\\good\\047.png"
+      ],
+      "image_auroc": 0.7302052785923753,
+      "image_ap": 0.9228449288026693,
+      "pixel_auroc_56": 0.7471537797629619,
+      "confusion": [
+        [
+          22,
+          0
+        ],
+        [
+          75,
+          18
+        ]
+      ],
+      "normal_false_positive_rate": 0.0,
+      "anomaly_recall_at_threshold": 0.1935483870967742,
+      "threshold": 0.013239006511867046
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png"
+      ],
+      "image_auroc": 0.8085609243697479,
+      "image_ap": 0.9406041178687483,
+      "pixel_auroc_56": 0.8430416096966633,
+      "confusion": [
+        [
+          25,
+          7
+        ],
+        [
+          50,
+          69
+        ]
+      ],
+      "normal_false_positive_rate": 0.21875,
+      "anomaly_recall_at_threshold": 0.5798319327731093,
+      "threshold": 0.42539262771606445
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png",
+        ".cache\\data\\zipper\\train\\good\\186.png",
+        ".cache\\data\\zipper\\train\\good\\013.png",
+        ".cache\\data\\zipper\\train\\good\\169.png"
+      ],
+      "image_auroc": 0.9582457983193277,
+      "image_ap": 0.9891110393575802,
+      "pixel_auroc_56": 0.8771693531356803,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          14,
+          105
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.8823529411764706,
+      "threshold": 0.21412552893161774
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png",
+        ".cache\\data\\zipper\\train\\good\\186.png",
+        ".cache\\data\\zipper\\train\\good\\013.png",
+        ".cache\\data\\zipper\\train\\good\\169.png",
+        ".cache\\data\\zipper\\train\\good\\239.png",
+        ".cache\\data\\zipper\\train\\good\\037.png",
+        ".cache\\data\\zipper\\train\\good\\167.png",
+        ".cache\\data\\zipper\\train\\good\\111.png",
+        ".cache\\data\\zipper\\train\\good\\124.png",
+        ".cache\\data\\zipper\\train\\good\\014.png",
+        ".cache\\data\\zipper\\train\\good\\112.png",
+        ".cache\\data\\zipper\\train\\good\\117.png",
+        ".cache\\data\\zipper\\train\\good\\073.png",
+        ".cache\\data\\zipper\\train\\good\\016.png",
+        ".cache\\data\\zipper\\train\\good\\128.png",
+        ".cache\\data\\zipper\\train\\good\\034.png"
+      ],
+      "image_auroc": 0.9569327731092437,
+      "image_ap": 0.9885829273430881,
+      "pixel_auroc_56": 0.8887540846668901,
+      "confusion": [
+        [
+          26,
+          6
+        ],
+        [
+          10,
+          109
+        ]
+      ],
+      "normal_false_positive_rate": 0.1875,
+      "anomaly_recall_at_threshold": 0.9159663865546218,
+      "threshold": 0.1675531417131424
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png"
+      ],
+      "image_auroc": 0.7389705882352942,
+      "image_ap": 0.9122306643044777,
+      "pixel_auroc_56": 0.8532544356923868,
+      "confusion": [
+        [
+          26,
+          6
+        ],
+        [
+          56,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.1875,
+      "anomaly_recall_at_threshold": 0.5294117647058824,
+      "threshold": 0.485703706741333
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png",
+        ".cache\\data\\zipper\\train\\good\\138.png",
+        ".cache\\data\\zipper\\train\\good\\136.png",
+        ".cache\\data\\zipper\\train\\good\\037.png"
+      ],
+      "image_auroc": 0.9440651260504201,
+      "image_ap": 0.9857175458966727,
+      "pixel_auroc_56": 0.8828789991574478,
+      "confusion": [
+        [
+          27,
+          5
+        ],
+        [
+          17,
+          102
+        ]
+      ],
+      "normal_false_positive_rate": 0.15625,
+      "anomaly_recall_at_threshold": 0.8571428571428571,
+      "threshold": 0.21877503395080566
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png",
+        ".cache\\data\\zipper\\train\\good\\138.png",
+        ".cache\\data\\zipper\\train\\good\\136.png",
+        ".cache\\data\\zipper\\train\\good\\037.png",
+        ".cache\\data\\zipper\\train\\good\\178.png",
+        ".cache\\data\\zipper\\train\\good\\018.png",
+        ".cache\\data\\zipper\\train\\good\\066.png",
+        ".cache\\data\\zipper\\train\\good\\021.png",
+        ".cache\\data\\zipper\\train\\good\\172.png",
+        ".cache\\data\\zipper\\train\\good\\148.png",
+        ".cache\\data\\zipper\\train\\good\\111.png",
+        ".cache\\data\\zipper\\train\\good\\109.png",
+        ".cache\\data\\zipper\\train\\good\\204.png",
+        ".cache\\data\\zipper\\train\\good\\146.png",
+        ".cache\\data\\zipper\\train\\good\\139.png",
+        ".cache\\data\\zipper\\train\\good\\106.png"
+      ],
+      "image_auroc": 0.9732142857142857,
+      "image_ap": 0.9928773931980859,
+      "pixel_auroc_56": 0.8931344843776055,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          10,
+          109
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.9159663865546218,
+      "threshold": 0.17497573792934418
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png"
+      ],
+      "image_auroc": 0.7612920168067228,
+      "image_ap": 0.9192771790616293,
+      "pixel_auroc_56": 0.7919401121967904,
+      "confusion": [
+        [
+          26,
+          6
+        ],
+        [
+          57,
+          62
+        ]
+      ],
+      "normal_false_positive_rate": 0.1875,
+      "anomaly_recall_at_threshold": 0.5210084033613446,
+      "threshold": 0.4871959388256073
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png",
+        ".cache\\data\\zipper\\train\\good\\168.png",
+        ".cache\\data\\zipper\\train\\good\\196.png",
+        ".cache\\data\\zipper\\train\\good\\096.png"
+      ],
+      "image_auroc": 0.9498424369747899,
+      "image_ap": 0.9872765662566646,
+      "pixel_auroc_56": 0.8687324564376672,
+      "confusion": [
+        [
+          26,
+          6
+        ],
+        [
+          14,
+          105
+        ]
+      ],
+      "normal_false_positive_rate": 0.1875,
+      "anomaly_recall_at_threshold": 0.8823529411764706,
+      "threshold": 0.20813311636447906
+    },
+    {
+      "category": "zipper",
+      "method": "dino",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png",
+        ".cache\\data\\zipper\\train\\good\\168.png",
+        ".cache\\data\\zipper\\train\\good\\196.png",
+        ".cache\\data\\zipper\\train\\good\\096.png",
+        ".cache\\data\\zipper\\train\\good\\082.png",
+        ".cache\\data\\zipper\\train\\good\\113.png",
+        ".cache\\data\\zipper\\train\\good\\117.png",
+        ".cache\\data\\zipper\\train\\good\\212.png",
+        ".cache\\data\\zipper\\train\\good\\099.png",
+        ".cache\\data\\zipper\\train\\good\\093.png",
+        ".cache\\data\\zipper\\train\\good\\173.png",
+        ".cache\\data\\zipper\\train\\good\\108.png",
+        ".cache\\data\\zipper\\train\\good\\018.png",
+        ".cache\\data\\zipper\\train\\good\\191.png",
+        ".cache\\data\\zipper\\train\\good\\038.png",
+        ".cache\\data\\zipper\\train\\good\\239.png"
+      ],
+      "image_auroc": 0.9637605042016806,
+      "image_ap": 0.9910694336409548,
+      "pixel_auroc_56": 0.8860944264401956,
+      "confusion": [
+        [
+          28,
+          4
+        ],
+        [
+          7,
+          112
+        ]
+      ],
+      "normal_false_positive_rate": 0.125,
+      "anomaly_recall_at_threshold": 0.9411764705882353,
+      "threshold": 0.16187141835689545
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png"
+      ],
+      "image_auroc": 0.6743697478991597,
+      "image_ap": 0.8479613095041596,
+      "pixel_auroc_56": 0.757457987001603,
+      "confusion": [
+        [
+          27,
+          5
+        ],
+        [
+          86,
+          33
+        ]
+      ],
+      "normal_false_positive_rate": 0.15625,
+      "anomaly_recall_at_threshold": 0.2773109243697479,
+      "threshold": 0.007522424217313528
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png",
+        ".cache\\data\\zipper\\train\\good\\186.png",
+        ".cache\\data\\zipper\\train\\good\\013.png",
+        ".cache\\data\\zipper\\train\\good\\169.png"
+      ],
+      "image_auroc": 0.7234768907563025,
+      "image_ap": 0.864988061764239,
+      "pixel_auroc_56": 0.8281934416305944,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          99,
+          20
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.16806722689075632,
+      "threshold": 0.0055022635497152805
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 17,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\079.png",
+        ".cache\\data\\zipper\\train\\good\\186.png",
+        ".cache\\data\\zipper\\train\\good\\013.png",
+        ".cache\\data\\zipper\\train\\good\\169.png",
+        ".cache\\data\\zipper\\train\\good\\239.png",
+        ".cache\\data\\zipper\\train\\good\\037.png",
+        ".cache\\data\\zipper\\train\\good\\167.png",
+        ".cache\\data\\zipper\\train\\good\\111.png",
+        ".cache\\data\\zipper\\train\\good\\124.png",
+        ".cache\\data\\zipper\\train\\good\\014.png",
+        ".cache\\data\\zipper\\train\\good\\112.png",
+        ".cache\\data\\zipper\\train\\good\\117.png",
+        ".cache\\data\\zipper\\train\\good\\073.png",
+        ".cache\\data\\zipper\\train\\good\\016.png",
+        ".cache\\data\\zipper\\train\\good\\128.png",
+        ".cache\\data\\zipper\\train\\good\\034.png"
+      ],
+      "image_auroc": 0.8408613445378151,
+      "image_ap": 0.9064072982733502,
+      "pixel_auroc_56": 0.8961382284817166,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          91,
+          28
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.23529411764705882,
+      "threshold": 0.0019336541881784797
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png"
+      ],
+      "image_auroc": 0.6383928571428572,
+      "image_ap": 0.8380118081456909,
+      "pixel_auroc_56": 0.7796878689532937,
+      "confusion": [
+        [
+          28,
+          4
+        ],
+        [
+          101,
+          18
+        ]
+      ],
+      "normal_false_positive_rate": 0.125,
+      "anomaly_recall_at_threshold": 0.15126050420168066,
+      "threshold": 0.00934535264968872
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png",
+        ".cache\\data\\zipper\\train\\good\\138.png",
+        ".cache\\data\\zipper\\train\\good\\136.png",
+        ".cache\\data\\zipper\\train\\good\\037.png"
+      ],
+      "image_auroc": 0.7539390756302521,
+      "image_ap": 0.8740189799643934,
+      "pixel_auroc_56": 0.8565960650160739,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          97,
+          22
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.18487394957983194,
+      "threshold": 0.004472812172025442
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 29,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\102.png",
+        ".cache\\data\\zipper\\train\\good\\138.png",
+        ".cache\\data\\zipper\\train\\good\\136.png",
+        ".cache\\data\\zipper\\train\\good\\037.png",
+        ".cache\\data\\zipper\\train\\good\\178.png",
+        ".cache\\data\\zipper\\train\\good\\018.png",
+        ".cache\\data\\zipper\\train\\good\\066.png",
+        ".cache\\data\\zipper\\train\\good\\021.png",
+        ".cache\\data\\zipper\\train\\good\\172.png",
+        ".cache\\data\\zipper\\train\\good\\148.png",
+        ".cache\\data\\zipper\\train\\good\\111.png",
+        ".cache\\data\\zipper\\train\\good\\109.png",
+        ".cache\\data\\zipper\\train\\good\\204.png",
+        ".cache\\data\\zipper\\train\\good\\146.png",
+        ".cache\\data\\zipper\\train\\good\\139.png",
+        ".cache\\data\\zipper\\train\\good\\106.png"
+      ],
+      "image_auroc": 0.7668067226890756,
+      "image_ap": 0.8673921732364038,
+      "pixel_auroc_56": 0.8921613760873688,
+      "confusion": [
+        [
+          28,
+          4
+        ],
+        [
+          101,
+          18
+        ]
+      ],
+      "normal_false_positive_rate": 0.125,
+      "anomaly_recall_at_threshold": 0.15126050420168066,
+      "threshold": 0.003112713573500514
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 1,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png"
+      ],
+      "image_auroc": 0.5898109243697479,
+      "image_ap": 0.8136009513686997,
+      "pixel_auroc_56": 0.7202715794726535,
+      "confusion": [
+        [
+          27,
+          5
+        ],
+        [
+          101,
+          18
+        ]
+      ],
+      "normal_false_positive_rate": 0.15625,
+      "anomaly_recall_at_threshold": 0.15126050420168066,
+      "threshold": 0.011364360339939594
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 4,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png",
+        ".cache\\data\\zipper\\train\\good\\168.png",
+        ".cache\\data\\zipper\\train\\good\\196.png",
+        ".cache\\data\\zipper\\train\\good\\096.png"
+      ],
+      "image_auroc": 0.8119747899159664,
+      "image_ap": 0.8947287658169094,
+      "pixel_auroc_56": 0.8594956640322686,
+      "confusion": [
+        [
+          28,
+          4
+        ],
+        [
+          97,
+          22
+        ]
+      ],
+      "normal_false_positive_rate": 0.125,
+      "anomaly_recall_at_threshold": 0.18487394957983194,
+      "threshold": 0.0033990144729614258
+    },
+    {
+      "category": "zipper",
+      "method": "rgb",
+      "seed": 43,
+      "shots": 16,
+      "references": [
+        ".cache\\data\\zipper\\train\\good\\152.png",
+        ".cache\\data\\zipper\\train\\good\\168.png",
+        ".cache\\data\\zipper\\train\\good\\196.png",
+        ".cache\\data\\zipper\\train\\good\\096.png",
+        ".cache\\data\\zipper\\train\\good\\082.png",
+        ".cache\\data\\zipper\\train\\good\\113.png",
+        ".cache\\data\\zipper\\train\\good\\117.png",
+        ".cache\\data\\zipper\\train\\good\\212.png",
+        ".cache\\data\\zipper\\train\\good\\099.png",
+        ".cache\\data\\zipper\\train\\good\\093.png",
+        ".cache\\data\\zipper\\train\\good\\173.png",
+        ".cache\\data\\zipper\\train\\good\\108.png",
+        ".cache\\data\\zipper\\train\\good\\018.png",
+        ".cache\\data\\zipper\\train\\good\\191.png",
+        ".cache\\data\\zipper\\train\\good\\038.png",
+        ".cache\\data\\zipper\\train\\good\\239.png"
+      ],
+      "image_auroc": 0.8936449579831933,
+      "image_ap": 0.9335109003614199,
+      "pixel_auroc_56": 0.9014930874639858,
+      "confusion": [
+        [
+          30,
+          2
+        ],
+        [
+          84,
+          35
+        ]
+      ],
+      "normal_false_positive_rate": 0.0625,
+      "anomaly_recall_at_threshold": 0.29411764705882354,
+      "threshold": 0.0014348229160532355
+    }
+  ],
+  "robustness": [
+    {
+      "category": "bottle",
+      "condition": "blur",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.8928571428571428,
+      "image_ap": 0.961227719751863,
+      "pixel_auroc_56": 0.9581427304701129,
+      "confusion": [
+        [
+          0,
+          20
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 1.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.15485142171382904
+    },
+    {
+      "category": "bottle",
+      "condition": "dark",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.9992063492063492,
+      "image_ap": 0.999751984126984,
+      "pixel_auroc_56": 0.9884886354849763,
+      "confusion": [
+        [
+          19,
+          1
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 0.05,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.15485142171382904
+    },
+    {
+      "category": "bottle",
+      "condition": "jpeg",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 1.0,
+      "image_ap": 0.9999999999999998,
+      "pixel_auroc_56": 0.9773213169379866,
+      "confusion": [
+        [
+          0,
+          20
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "normal_false_positive_rate": 1.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.15485142171382904
+    },
+    {
+      "category": "metal_nut",
+      "condition": "blur",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.8313782991202346,
+      "image_ap": 0.9498908087852409,
+      "pixel_auroc_56": 0.758158094206453,
+      "confusion": [
+        [
+          2,
+          20
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.9090909090909091,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.19450365006923676
+    },
+    {
+      "category": "metal_nut",
+      "condition": "dark",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 1.0,
+      "image_ap": 1.0,
+      "pixel_auroc_56": 0.9556152615971241,
+      "confusion": [
+        [
+          20,
+          2
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 0.09090909090909091,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.19450365006923676
+    },
+    {
+      "category": "metal_nut",
+      "condition": "jpeg",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.9183773216031281,
+      "image_ap": 0.9795798859442975,
+      "pixel_auroc_56": 0.7703054852368475,
+      "confusion": [
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          93
+        ]
+      ],
+      "normal_false_positive_rate": 1.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.19450365006923676
+    },
+    {
+      "category": "zipper",
+      "condition": "blur",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.976890756302521,
+      "image_ap": 0.9943367066520427,
+      "pixel_auroc_56": 0.9350994358937501,
+      "confusion": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          119
+        ]
+      ],
+      "normal_false_positive_rate": 1.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.1675531417131424
+    },
+    {
+      "category": "zipper",
+      "condition": "dark",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.9692752100840336,
+      "image_ap": 0.9919889089812428,
+      "pixel_auroc_56": 0.8840394607886162,
+      "confusion": [
+        [
+          29,
+          3
+        ],
+        [
+          9,
+          110
+        ]
+      ],
+      "normal_false_positive_rate": 0.09375,
+      "anomaly_recall_at_threshold": 0.9243697478991597,
+      "threshold": 0.1675531417131424
+    },
+    {
+      "category": "zipper",
+      "condition": "jpeg",
+      "seed": 17,
+      "shots": 16,
+      "image_auroc": 0.8726365546218487,
+      "image_ap": 0.963721916123029,
+      "pixel_auroc_56": 0.689844228423266,
+      "confusion": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          119
+        ]
+      ],
+      "normal_false_positive_rate": 1.0,
+      "anomaly_recall_at_threshold": 1.0,
+      "threshold": 0.1675531417131424
+    }
+  ],
+  "elapsed_seconds": 154.69379940000363,
+  "summary": [
+    {
+      "method": "rgb",
+      "shots": 1,
+      "macro_image_auroc": 0.6895518789138334,
+      "std_across_seed_macro": 0.022981139566400736,
+      "macro_pixel_auroc_56": 0.769659648520181,
+      "pixel_std": 0.008777534294872174
+    },
+    {
+      "method": "rgb",
+      "shots": 4,
+      "macro_image_auroc": 0.7712404724027117,
+      "std_across_seed_macro": 0.027549982336607166,
+      "macro_pixel_auroc_56": 0.8269229652129556,
+      "pixel_std": 0.007390276858170416
+    },
+    {
+      "method": "rgb",
+      "shots": 16,
+      "macro_image_auroc": 0.8414969341163205,
+      "std_across_seed_macro": 0.016852945332989755,
+      "macro_pixel_auroc_56": 0.8661431254843764,
+      "pixel_std": 0.0020547630479126663
+    },
+    {
+      "method": "dino",
+      "shots": 1,
+      "macro_image_auroc": 0.9206302962153691,
+      "std_across_seed_macro": 0.010080835900736254,
+      "macro_pixel_auroc_56": 0.9092553205625814,
+      "pixel_std": 0.009616263003554136
+    },
+    {
+      "method": "dino",
+      "shots": 4,
+      "macro_image_auroc": 0.9829144525736871,
+      "std_across_seed_macro": 0.001881081058450408,
+      "macro_pixel_auroc_56": 0.9364359153779587,
+      "pixel_std": 0.002997283753804579
+    },
+    {
+      "method": "dino",
+      "shots": 16,
+      "macro_image_auroc": 0.9882119514472455,
+      "std_across_seed_macro": 0.0022252189501560673,
+      "macro_pixel_auroc_56": 0.9448790186553149,
+      "pixel_std": 0.0008551747263190082
+    }
+  ]
+}
